@@ -1,0 +1,85 @@
+/* :root is used to declare global variable */
+
+:root {
+    --background: white;
+    --border: black;
+}
+
+#flex-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-self: center;
+
+}
+
+#header {
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    padding: 5px;
+    font-size: 50px;
+}
+
+
+
+#mainContainer {
+    display: flex;
+    margin-top: 50px;
+    margin-left:50px;
+    flex-wrap: wrap;
+    /* width: 600px;
+    height: 600px; */
+    /* justify-content: center;
+    align-self: center; */
+
+
+}
+
+#options {
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    padding: 5px;
+    margin-top: 10px;
+}
+
+#prompt {
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    padding: 5px;
+    font-size: 30px;
+}
+
+.button:hover{
+    background-color: rgb(167, 74, 128); 
+    color: white;
+
+}
+
+.button {
+    padding: 5px;
+    margin: 5px;
+    background-color: pink;
+    border: 2px solid black;
+    width: 180px;
+    height: 60px;
+    transition-duration: 0.4s;
+    font-size: 22px;
+    
+}
+
+.card {
+    background-color: aliceblue;
+    height: 200px;
+    width: 400px;
+    margin: 20px;
+    /* box-shadow: 40px; */
+    
+}
+
+.grid-element {
+    border: 1px solid var(--border);
+    background-color: var(--background);
+  }
