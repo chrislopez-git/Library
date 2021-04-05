@@ -12,13 +12,6 @@ function Book(title, author, pages, read){
     
 };
 
-// Book.prototype.info = function() {
-//     const info = this.title + ", " + this.author + ", " + this.pages + ", " + this.read;
-//     return info; 
-
-// };
-
-// console.log(theHobbit.info());
 
 let myLibrary = [];
 
@@ -29,7 +22,6 @@ function addBookToLibrary(newBook) {
 
     return true;
 }
-
 
 
 // Write a function that loops through the array and displays each book on
@@ -100,6 +92,12 @@ function fillGrid(size) {
     }
 
 }
+
+
+document.getElementById("add").addEventListener("click", function() {
+    document.getElementById("add").innerHTML = "change the text!";
+
+  });
 
 // test array objects
 const book1 = new Book("book1", "elvis", 100, "rocks");
