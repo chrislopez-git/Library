@@ -69,22 +69,48 @@ function fillGrid(size) {
         console.log(myLibrary[x].title);
         const gridChild = document.createElement("div");
         gridChild.classList = "card";
-        gridChild.textContent = myLibrary[x].info();
+        //gridChild.textContent = myLibrary[x].info();
         mainContainer.appendChild(gridChild);
+        
+        // book title div
+        const gridChildTitle = document.createElement("div");
+        gridChildTitle.classList = "bookInfo";
+        gridChildTitle.textContent = "Title: " + myLibrary[x].title;
+        gridChild.appendChild(gridChildTitle);
+
+        // author div
+        const gridChildAuthor = document.createElement("div");
+        gridChildAuthor.classList = "bookInfo";
+        gridChildAuthor.textContent = "Author: " + myLibrary[x].author;
+        gridChild.appendChild(gridChildAuthor);
+
+        // pages div
+        const gridChildPages = document.createElement("div");
+        gridChildPages.classList = "bookInfo";
+        gridChildPages.textContent = "Pages: " + myLibrary[x].pages;
+        gridChild.appendChild(gridChildPages);
+
+        // read div
+        const gridChildRead = document.createElement("div");
+        gridChildRead.classList = "bookInfo";
+        gridChildRead.textContent = "Read Status: " + myLibrary[x].read;
+        gridChild.appendChild(gridChildRead);
+
+        
     }
 
 }
 
 // test array objects
-const book1 = new Book("book1", "my", 100, "rocks");
+const book1 = new Book("book1", "elvis", 100, "rocks");
 console.log(book1.info());
 console.log(book1.info());
 addBookToLibrary(book1);
 console.log(myLibrary[0].info());
 
-const book2 = new Book("book2", "my", 100, "rocks");
+const book2 = new Book("book2", "brandon", 100, "rocks");
 addBookToLibrary(book2);
-const book3 = new Book("book3", "my", 100, "rocks");
+const book3 = new Book("book3", "chris", 100, "yoo");
 addBookToLibrary(book3);
 
 displayArray(myLibrary);
