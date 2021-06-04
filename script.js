@@ -14,6 +14,7 @@ function Book(title, author, pages, read){
 
 
 let myLibrary = [];
+let formLive = false;
 
 
 // function to the script (not the constructor) that can take user’s input and store the new book objects into an array.
@@ -43,6 +44,33 @@ function displayArray(myLibrary){
         console.log(myLibrary[x].title);
     }
     fillGrid(12);
+
+}
+
+// function displayForm(){
+//     // book title div
+//     if(formLive == true){
+//         return;
+//     }
+//     const formHolder = document.createElement("div");
+//     formHolder.classList = "form";
+//     formHolder.textContent = "This is where the form will be!";
+//     mainContainer.insertBefore(formHolder, mainContainer.childNodes[0]);
+//     formLive = true; //prevents multiple forms
+
+// }
+
+function clearForm(formHolder){
+    mainContainer.removeChild(formHolder);
+
+}
+
+function clearGrid(){
+    // create array from childnodes (grid elements)
+    const gridArray = Array.from(gridHolder.childNodes);
+    gridArray.forEach((element) => {
+        gridHolder.removeChild(element);
+    });
 
 }
 
@@ -88,7 +116,6 @@ function fillGrid(size) {
         gridChildRead.textContent = "Read Status: " + myLibrary[x].read;
         gridChild.appendChild(gridChildRead);
 
-        
     }
 
 }
@@ -96,6 +123,14 @@ function fillGrid(size) {
 
 document.getElementById("add").addEventListener("click", function() {
     document.getElementById("add").innerHTML = "change the text!";
+    let title = document.getElementById('title').value;
+    let author = document.getElementById('author').value;
+    let pages = document.getElementById('pages').value;
+    let status = document.getElementById('status').value;
+    const formBook = new Book(title, author, pages, status);
+    addBookToLibrary(formBook);
+    displayArray(myLibrary);
+    
 
   });
 
